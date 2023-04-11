@@ -143,6 +143,9 @@
     <ClInclude Include="Layer4.h" />
     <ClInclude Include="Layer5.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="getRequest.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
