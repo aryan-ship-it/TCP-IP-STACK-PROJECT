@@ -1,8 +1,16 @@
 #pragma once
-class Layer1
-{
-private:
-public:
+#include <string>
 
+using namespace std;
+
+class IPAddress {
+public:
+	IPAddress();
+	string getIPAddress();
+
+private:
+	string address;
+	string setIPAddress();
 };
+
 
