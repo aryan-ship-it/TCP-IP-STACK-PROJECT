@@ -5,14 +5,18 @@
 using namespace std;
 
 IPAddress::IPAddress() {
-	address = setIPAddress();
+	address = randomIPAddress();
 }
 
 string IPAddress::getIPAddress() {
 	return address;
 }
 
-string IPAddress::setIPAddress() {
+void IPAddress::setIPAddress(string address) {
+	this->address = address;
+}
+
+string IPAddress::randomIPAddress() {
 	srand(time(nullptr)); // ensures that it is a different random number every time it runs
 	string address = "";
 	for (int i = 0; i < 4; i++) {

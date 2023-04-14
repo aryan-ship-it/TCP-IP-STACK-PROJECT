@@ -10,10 +10,11 @@ class IPAddress {
 public:
 	IPAddress();
 	string getIPAddress();
+	void setIPAddress(string);
 
 private:
 	string address;
-	string setIPAddress();
+	string randomIPAddress();
 };
 
 #endif
