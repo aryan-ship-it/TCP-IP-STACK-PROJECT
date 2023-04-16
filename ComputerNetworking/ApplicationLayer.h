@@ -1,5 +1,5 @@
 #pragma once
-class Layer1
+class AppLayer
 {
 private:
 public:

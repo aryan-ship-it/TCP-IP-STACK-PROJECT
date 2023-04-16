@@ -4,6 +4,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "Layer1.h"
+#include "Layer2.h"
+#include "Layer3.h"
+#include "Layer4.h"
+#include "Layer5.h"
 
 using namespace std;
 void parseMessage() {
@@ -44,23 +49,8 @@ void parseMessage() {
 
 }
 
-string IPAddress() {
-    srand(time(0)); // ensures that it is a different random number every time it runs
-    string address = "";
-    for (int i = 0; i < 4; i++) {
-        int octet = rand() % 256; // generate random number between 0 and 255
-        address += to_string(octet); // convert the number to a string and append it to the address
-        if (i < 3) {
-            address += "."; // add a dot separator between octets
-        }
-    }
-    cout << address;
-    return address;
-}
-
 int main()
 {
-    IPAddress();
     parseMessage();
 }
 

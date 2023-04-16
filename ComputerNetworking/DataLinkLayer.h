@@ -1,5 +1,5 @@
 #pragma once
-class Layer4
+class DataLink
 {
 };
 
