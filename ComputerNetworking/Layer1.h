@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 
-#ifndef LAYER_H
-#define LAYER_H
+#ifndef LAYER1_H
+#define LAYER1_H
 
 using namespace std;
 
