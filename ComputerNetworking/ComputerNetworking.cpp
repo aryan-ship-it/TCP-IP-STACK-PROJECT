@@ -12,13 +12,16 @@
 #include "Buffer.h"
 
 using namespace std;
-void parseMessage() {
 
 
-}
+
 
 int main()
 {
-    parseMessage();
+    Buffer b;
+    b.Layer1Parse();
 }
+
+
+
 

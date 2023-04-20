@@ -1,11 +1,15 @@
 #pragma once
+#include <string>
+#include <vector> 
+
+using namespace std;
 
 
 class Buffer
 {
-public:
-	string message;
 private:
-	void parseMessage();
+	vector<string> Message;
+public :
+	void Layer1Parse();
 };
 
