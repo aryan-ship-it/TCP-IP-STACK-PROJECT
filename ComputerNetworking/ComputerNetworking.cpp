@@ -10,6 +10,7 @@
 #include "DataLinkLayer.h"
 #include "PhysicalLayer.h"
 #include "Buffer.h"
+#include <vector>
 
 using namespace std;
 
@@ -18,8 +19,15 @@ using namespace std;
 
 int main()
 {
-    Buffer b;
-    b.Layer1Parse();
+    ApplicationLayer A; 
+    A.Layer1Parse();
+    A.RandomIPset();
+    for (const auto& str : A.getMessage()) {
+        cout << str << endl;
+    }
+
+
+   
 }
 
 

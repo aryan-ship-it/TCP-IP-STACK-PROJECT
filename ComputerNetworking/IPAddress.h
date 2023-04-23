@@ -9,10 +9,9 @@ public:
 	IPAddress();
 	string getIPAddress();
 	void setIPAddress(string);
-
-private:
-	string address;
 	string randomIPAddress();
+	string Address;
+	
 };
 
 

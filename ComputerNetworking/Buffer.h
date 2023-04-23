@@ -7,9 +7,12 @@ using namespace std;
 
 class Buffer
 {
-private:
+protected:
 	vector<string> Message;
 public :
 	void Layer1Parse();
+	vector<string> getMessage();
+	void setMessage(vector<string> message);
+
 };
 

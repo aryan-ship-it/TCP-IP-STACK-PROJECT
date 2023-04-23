@@ -4,6 +4,7 @@
 using namespace std;
 #include <fstream> 
 #include <vector>
+#include "ApplicationLayer.h"
 
 
 void Buffer::Layer1Parse() {
@@ -29,13 +30,10 @@ void Buffer::Layer1Parse() {
     }
     getFile.close();
 
-    // print the lines in the vector
-    for (const auto& str : lines) {
-        cout << str << endl;
-    }
-
     // assign the vector to the private member variable message
     Message = lines;
-
-    return;
 }
+
+
+void Buffer::setMessage(vector<string> message ) { Message = message; }
+vector <string> Buffer::getMessage() { return Message;}
