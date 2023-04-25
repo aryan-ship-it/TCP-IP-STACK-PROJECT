@@ -10,6 +10,7 @@ protected:
 
 
 public:
+	ApplicationLayer(HTTPRequest* );
 	void setHeaders(string Message);
 	void getHeaders();
 	

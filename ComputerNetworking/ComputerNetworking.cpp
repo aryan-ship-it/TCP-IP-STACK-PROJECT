@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
 
-	HTTPRequest	Request; 
+	HTTPRequest Request; 
    
 }
 

@@ -6,6 +6,6 @@
 
 using namespace std; 
 
-
-
-
+ApplicationLayer::ApplicationLayer() {
+	
+}
