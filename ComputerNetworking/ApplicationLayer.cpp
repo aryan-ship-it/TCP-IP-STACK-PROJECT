@@ -13,8 +13,8 @@ void ApplicationLayer:: RandomIPset(){
 	IPAddress dest;
 	string destIP = dest.getIPAddress();
 
-	setSourceIP(sourceIP);
-	setDestIP(destIP);
+	source.setIPAddress(sourceIP);
+	dest.setIPAddress(destIP);
 
 	Message.push_back("sourceIP: " + sourceIP);
 	Message.push_back("DestIP: " + destIP);
@@ -23,11 +23,6 @@ void ApplicationLayer:: RandomIPset(){
 
 }
 
-void ApplicationLayer::setSourceIP(string IP) { SourceIP = IP;}
 
-void ApplicationLayer::setDestIP(string IP) { SourceIP = IP; }
-
-string ApplicationLayer::getSourceIP() { return SourceIP; }
-string ApplicationLayer::getDestIP() { return DestIP; }
 
 
