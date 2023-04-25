@@ -17,6 +17,7 @@ void IPAddress::setIPAddress(string address) {
 }
 
 string IPAddress::randomIPAddress() {
+
 	string address = "";
 	for (int i = 0; i < 4; i++) {
 		int octet = rand() % 256; // generate random number between 0 and 255
