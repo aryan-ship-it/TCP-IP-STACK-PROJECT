@@ -5,16 +5,20 @@
 using namespace std;
 
 IPAddress::IPAddress() {
-	Address = randomIPAddress();
+	while (sourceIP == destIP) {
+		sourceIP = randomIPAddress();
+		destIP = randomIPAddress();
+
+	}
+
 }
 
-string IPAddress::getIPAddress() {
-	return Address;
-}
+string IPAddress::getSourceIPAddress() {return sourceIP;}
+void IPAddress::setSourceIPAddress(string address) {sourceIP = address;}
 
-void IPAddress::setIPAddress(string address) {
-	Address = address;
-}
+string IPAddress::getDestIPAddress() {return destIP;}
+void IPAddress::setDestIPAddress(string address) { destIP = address;}
+
 
 string IPAddress::randomIPAddress() {
 

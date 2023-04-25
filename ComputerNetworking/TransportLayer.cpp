@@ -26,13 +26,13 @@ void TransportLayer::TransportLayerSet() {
 
 }
 
-void TransportLayer::setSourcePort(int sourcePort) { SourcePort = sourcePort; }
+void TransportLayer::setSourcePort(uint16_t sourcePort) { SourcePort = sourcePort; }
 
 
 
-void TransportLayer::setDestinationPort(int destPort) { DestinationPort = destPort; }
+void TransportLayer::setDestinationPort(uint16_t destPort) { DestinationPort = destPort; }
 
-int TransportLayer::getSourcePort() { return SourcePort; }
+uint16_t TransportLayer::getSourcePort() { return SourcePort; }
 
 void TransportLayer::sourcePortGenerator() { SourcePort = generatePort();}
 
@@ -42,11 +42,11 @@ void TransportLayer::destPortGenerator() {
     } while (DestinationPort == SourcePort);
 
 }
-int TransportLayer::getDestinationPort() { return DestinationPort; }
+uint16_t TransportLayer::getDestinationPort() { return DestinationPort; }
 
-int TransportLayer::generatePort() {
+uint16_t TransportLayer::generatePort() {
     srand(time(nullptr));
-    int port;
+    uint16_t port;
     do {
         port = (rand() % 65536);
     } while (port == 80 || port == 8080 || port == 443 || port == 8888 || port == 8000);

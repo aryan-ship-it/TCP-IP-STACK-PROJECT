@@ -5,12 +5,18 @@
 using namespace std;
 
 class IPAddress {
+private:
+	string sourceIP;
+	string destIP;
+	string randomIPAddress();
 public:
 	IPAddress();
-	string getIPAddress();
-	void setIPAddress(string);
-	string randomIPAddress();
-	string Address;
+	string getSourceIPAddress();
+	void setSourceIPAddress(string);
+
+	string getDestIPAddress();
+	void setDestIPAddress(string);
+
 	
 };
 

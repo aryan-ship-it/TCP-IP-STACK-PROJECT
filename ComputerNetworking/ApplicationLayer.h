@@ -9,8 +9,6 @@ class ApplicationLayer : public Buffer {
 protected:
 
 	vector <string> Layer1Message;
-	string SourceIP; 
-	string DestIP;
 	string Host; 
 	string UserAgent; 
 	string Accept;
@@ -19,13 +17,9 @@ protected:
 	string Connection; 
 
 public:
-	void RandomIPset();
 	void setAppMessage(string Message);
 	vector<string> getAppMessage();
-	void setSourceIP(string IP);
-	string getSourceIP();
-	void setDestIP(string IP);
-	string getDestIP();
+
 
 
 

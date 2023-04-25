@@ -6,17 +6,17 @@
 class TransportLayer : public ApplicationLayer {
 
 protected:
-    int SourcePort;
-    int DestinationPort;
-    int generatePort();
+    uint16_t SourcePort;
+    uint16_t DestinationPort;
+    uint16_t generatePort();
 public:
 
     void TransportLayerSet(); 
-    void setSourcePort(int sourcePort);
-    int getSourcePort();
+    void setSourcePort(uint16_t sourcePort);
+    uint16_t getSourcePort();
 
-    void setDestinationPort(int destPort);
-    int getDestinationPort();
+    void setDestinationPort(uint16_t destPort);
+    uint16_t getDestinationPort();
 
     void destPortGenerator();
     void sourcePortGenerator();

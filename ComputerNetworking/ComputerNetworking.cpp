@@ -19,14 +19,6 @@ using namespace std;
 
 int main()
 {
-    TransportLayer A; 
-   
-    A.Layer1Parse();
-    A.RandomIPset();
-    A.TransportLayerSet();
-    for (const auto& str : A.getMessage()) {
-        cout << str << endl;
-    }
 
 
    
