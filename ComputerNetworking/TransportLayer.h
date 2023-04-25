@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "Buffer.h" 
+#include "HTTPRequest.h" 
 #include "ApplicationLayer.h"
 
-class TransportLayer : public ApplicationLayer {
+class TransportLayer {
 
 protected:
     uint16_t SourcePort;

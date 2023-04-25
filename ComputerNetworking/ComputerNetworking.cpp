@@ -4,12 +4,12 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "ApplicationLayer.h"
-#include "TransportLayer.h"
-#include "NetworkLayer.h"
-#include "DataLinkLayer.h"
-#include "PhysicalLayer.h"
-#include "Buffer.h"
+//#include "ApplicationLayer.h"
+//#include "TransportLayer.h"
+//#include "NetworkLayer.h"
+//#include "DataLinkLayer.h"
+//#include "PhysicalLayer.h"
+#include "HTTPRequest.h"
 #include <vector>
 
 using namespace std;
@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
 
-
+	HTTPRequest	Request; 
    
 }
 

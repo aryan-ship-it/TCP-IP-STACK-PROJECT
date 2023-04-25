@@ -9,6 +9,7 @@ NetworkLayer::NetworkLayer() {
 	setSourceIP(sourceIP);
 	setDestIP(destIP);
 
-
 }
 
+void NetworkLayer::setSourceIP(string sourceIP) { SourceIP= sourceIP; }
+void NetworkLayer::setDestIP(string destIP) { DestIP = destIP; }

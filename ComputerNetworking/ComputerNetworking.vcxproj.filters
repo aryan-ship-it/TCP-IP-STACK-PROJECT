@@ -29,7 +29,7 @@
     <ClCompile Include="ApplicationLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Buffer.cpp">
+    <ClCompile Include="HTTPRequest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IPAddress.cpp">
@@ -52,7 +52,7 @@
     <ClInclude Include="ApplicationLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Buffer.h">
+    <ClInclude Include="HTTPRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IPAddress.h">

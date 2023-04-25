@@ -1,24 +1,18 @@
 #pragma once
 #include<vector>
-#include "Buffer.h"
+#include "HTTPRequest.h"
 #include "IPAddress.h"
 
 
 
-class ApplicationLayer : public Buffer {
+class ApplicationLayer {
 protected:
 
-	vector <string> Layer1Message;
-	string Host; 
-	string UserAgent; 
-	string Accept;
-	string AcceptLanguage;
-	string AcceptEncoding;
-	string Connection; 
 
 public:
-	void setAppMessage(string Message);
-	vector<string> getAppMessage();
+	void setHeaders(string Message);
+	void getHeaders();
+	
 
 
 

@@ -1,5 +1,5 @@
 #include "TransportLayer.h"
-#include "Buffer.h"
+#include "HTTPRequest.h"
 #include <string>
 #include <iostream>
 #include <cstdlib>
@@ -20,9 +20,6 @@ void TransportLayer::TransportLayerSet() {
     string source = to_string(getSourcePort()); 
     string dest = to_string(getDestinationPort());
 
-
-    Message.push_back("Source Port : " + source);
-    Message.push_back("Destination Port : " + dest);
 
 }
 
@@ -45,7 +42,6 @@ void TransportLayer::destPortGenerator() {
 uint16_t TransportLayer::getDestinationPort() { return DestinationPort; }
 
 uint16_t TransportLayer::generatePort() {
-    srand(time(nullptr));
     uint16_t port;
     do {
         port = (rand() % 65536);
