@@ -1,19 +1,22 @@
 #include <cstdlib>
 #include <ctime>
-#include "Layer1.h"
+#include "IPAddress.h"
 
 using namespace std;
 
 IPAddress::IPAddress() {
-	address = setIPAddress();
+	Address = randomIPAddress();
 }
 
 string IPAddress::getIPAddress() {
-	return address;
+	return Address;
 }
 
-string IPAddress::setIPAddress() {
-	srand(time(nullptr)); // ensures that it is a different random number every time it runs
+void IPAddress::setIPAddress(string address) {
+	Address = address;
+}
+
+string IPAddress::randomIPAddress() {
 	string address = "";
 	for (int i = 0; i < 4; i++) {
 		int octet = rand() % 256; // generate random number between 0 and 255

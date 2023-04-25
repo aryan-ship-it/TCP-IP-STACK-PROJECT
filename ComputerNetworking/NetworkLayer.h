@@ -1,5 +1,5 @@
 #pragma once
-class Layer2
+class NetworkLayer
 {
 };
 

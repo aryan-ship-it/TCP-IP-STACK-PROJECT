@@ -14,43 +14,52 @@
     <ClCompile Include="ComputerNetworking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layer5.cpp">
+    <ClCompile Include="PhysicalLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layer4.cpp">
+    <ClCompile Include="DataLinkLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layer3.cpp">
+    <ClCompile Include="NetworkLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layer2.cpp">
+    <ClCompile Include="TransportLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layer1.cpp">
+    <ClCompile Include="ApplicationLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Buffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IPAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Layer5.h">
+    <ClInclude Include="PhysicalLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layer4.h">
+    <ClInclude Include="DataLinkLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layer3.h">
+    <ClInclude Include="NetworkLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layer2.h">
+    <ClInclude Include="TransportLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layer1.h">
+    <ClInclude Include="ApplicationLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IPAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="getRequest.txt" />
   </ItemGroup>
 </Project>

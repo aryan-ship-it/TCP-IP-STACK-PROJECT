@@ -3,10 +3,35 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include "ApplicationLayer.h"
+#include "TransportLayer.h"
+#include "NetworkLayer.h"
+#include "DataLinkLayer.h"
+#include "PhysicalLayer.h"
+#include "Buffer.h"
+#include <vector>
+
+using namespace std;
+
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    TransportLayer A; 
+   
+    A.Layer1Parse();
+    A.RandomIPset();
+    A.TransportLayerSet();
+    for (const auto& str : A.getMessage()) {
+        cout << str << endl;
+    }
+
+
+   
 }
+
+
 
 

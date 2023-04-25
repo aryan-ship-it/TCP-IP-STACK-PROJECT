@@ -129,19 +129,24 @@
   <ItemGroup>
     <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="ComputerNetworking.cpp" />
-    <ClCompile Include="Layer1.cpp" />
-    <ClCompile Include="Layer2.cpp" />
-    <ClCompile Include="Layer3.cpp" />
-    <ClCompile Include="Layer4.cpp" />
-    <ClCompile Include="Layer5.cpp" />
+    <ClCompile Include="IPAddress.cpp" />
+    <ClCompile Include="ApplicationLayer.cpp" />
+    <ClCompile Include="TransportLayer.cpp" />
+    <ClCompile Include="NetworkLayer.cpp" />
+    <ClCompile Include="DataLinkLayer.cpp" />
+    <ClCompile Include="PhysicalLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
-    <ClInclude Include="Layer1.h" />
-    <ClInclude Include="Layer2.h" />
-    <ClInclude Include="Layer3.h" />
-    <ClInclude Include="Layer4.h" />
-    <ClInclude Include="Layer5.h" />
+    <ClInclude Include="IPAddress.h" />
+    <ClInclude Include="ApplicationLayer.h" />
+    <ClInclude Include="TransportLayer.h" />
+    <ClInclude Include="NetworkLayer.h" />
+    <ClInclude Include="DataLinkLayer.h" />
+    <ClInclude Include="PhysicalLayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="getRequest.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
