@@ -11,7 +11,7 @@ protected:
     uint16_t generatePort();
 public:
 
-    void TransportLayerSet(); 
+    TransportLayer(HTTPRequest &request); 
     void setSourcePort(uint16_t sourcePort);
     uint16_t getSourcePort();
 

@@ -5,7 +5,7 @@ using namespace std;
 #include <fstream> 
 #include <vector>
 #include <map>
-//#include "ApplicationLayer.h"
+#include "ApplicationLayer.h"
 
 
 HTTPRequest::HTTPRequest() {
@@ -39,7 +39,6 @@ std::map<std::string, std::string> HTTPRequest::parseBuffer() {
             value.erase(value.size() - 4);
             // Add key-value pair to the map
             request[key] = value;
-            std::cout << "Key: " << key << ", Value: " << value << std::endl;
         }
     }
 
@@ -48,3 +47,6 @@ std::map<std::string, std::string> HTTPRequest::parseBuffer() {
 
     return request;
 }
+
+void HTTPRequest::setBuffer(map <string, string> buffer) { Buffer = buffer; }
+map <string, string> HTTPRequest::getBuffer() { return Buffer; }

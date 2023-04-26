@@ -1,16 +1,19 @@
 #pragma once
 #include <string>
-
+#include "HTTPRequest.h"
 
 using namespace std;
 
 class DataLinkLayer {
 public:
-	DataLinkLayer();
-	string getDataLinkLayer();
-	void setDataLinkLayer(string);
+	DataLinkLayer(HTTPRequest& Request);
+	string getSourceMac();
+	void setSourceMac(string);
+	string getDestMac();
+	void setDestMac(string);
 private:
-	string address;
+	string sourceMAC;
+	string destMAC;
 	string randomDataLinkLayer();
 
 };

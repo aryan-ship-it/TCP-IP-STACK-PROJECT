@@ -2,17 +2,18 @@
 #include<vector>
 #include "HTTPRequest.h"
 #include "IPAddress.h"
+#include <vector>
 
 
 
 class ApplicationLayer {
-protected:
-
+private:
+	vector<string> Headers;
 
 public:
-	ApplicationLayer(HTTPRequest* );
-	void setHeaders(string Message);
-	void getHeaders();
+	ApplicationLayer(HTTPRequest& Request);
+	void setHeaders(vector<string> Message);
+	vector<string> getHeaders();
 	
 
 

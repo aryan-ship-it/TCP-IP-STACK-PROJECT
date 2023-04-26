@@ -7,20 +7,35 @@
 
 using namespace std;
 
-DataLinkLayer::DataLinkLayer() {
-	address = randomDataLinkLayer();
+DataLinkLayer::DataLinkLayer(HTTPRequest &Request) {
+	string source;
+	string dest;
+	while (source == dest) {
+		source = randomDataLinkLayer();
+		dest = randomDataLinkLayer();
+	}
+	setSourceMac(source);
+	setDestMac(dest);
+
+	map<string, string> message = Request.getBuffer();
+	message["SourceMAC"] = source;
+	message["DestMAC"] = dest;
+	Request.setBuffer(message);
+
+
+	
+	
+
+	
 }
 
-string DataLinkLayer::getDataLinkLayer() {
-	return address;
-}
+string DataLinkLayer::getDestMac() { return destMAC; }
+string DataLinkLayer::getSourceMac() { return sourceMAC; }
 
-void DataLinkLayer::setDataLinkLayer(string address) {
-	this->address = address;
-}
+void DataLinkLayer::setSourceMac(string address) {sourceMAC = address;}
+void DataLinkLayer::setDestMac(string address) { destMAC = address; }
 
 string DataLinkLayer::randomDataLinkLayer() {
-	srand(time(nullptr));
 	unsigned char mac[6];
 	for (int i = 0; i < 6; i++) {
 		mac[i] = rand() % 256;

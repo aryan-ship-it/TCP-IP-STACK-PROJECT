@@ -12,13 +12,23 @@ using namespace std;
 //    destinationPort = setdestinationPort();;
 // }
 
-void TransportLayer::TransportLayerSet() {
+TransportLayer::TransportLayer(HTTPRequest &Request) {
     sourcePortGenerator(); 
     destPortGenerator(); 
 
 
     string source = to_string(getSourcePort()); 
     string dest = to_string(getDestinationPort());
+    
+
+    map<string, string> TPBuffer = Request.getBuffer();
+    TPBuffer["SourcePort"] = source;
+    TPBuffer["DestPort"] = dest; 
+
+    Request.setBuffer(TPBuffer);
+
+    
+    
 
 
 }
