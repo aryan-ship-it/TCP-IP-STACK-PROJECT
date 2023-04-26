@@ -12,7 +12,21 @@
 #include "HTTPRequest.h"
 #include <vector>
 
+
 using namespace std;
+
+string mapToString(const map<string, string>& myMap) {
+	string result = "{";
+	for (const auto& kv : myMap) {
+		result += kv.first + ": " + kv.second + ",";
+	}
+	if (!myMap.empty()) {
+		// Remove the trailing ", " if the map is not empty
+		result = result.substr(0, result.length() - 2);
+	}
+	result += "}";
+	return result;
+}
 
 
 
@@ -33,9 +47,18 @@ int main()
 	DataLinkLayer D(Request);
 
 	for (const auto& pair : Request.getBuffer()) {
-		std::cout  << pair.first << " :" << pair.second << std::endl; 
+		std::cout  << pair.first << ":" << pair.second << std::endl; 
 	}
 
+	cout << endl;
+	
+
+
+	string map = mapToString(Request.getBuffer());
+
+	cout << map;
+
+	
 	
 	
 
