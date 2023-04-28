@@ -4,14 +4,13 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "ApplicationLayer.h"
 #include "TransportLayer.h"
 #include "NetworkLayer.h"
 #include "DataLinkLayer.h"
 #include "PhysicalLayer.h"
 #include "HTTPRequest.h"
 #include <vector>
-
+#include <queue>
 
 using namespace std;
 
@@ -23,30 +22,30 @@ using namespace std;
 int main()
 {
 
-	HTTPRequest Request;
+	HTTPRequest request("GET","getRequest.txt");
+	HTTPRequest request2("POST","postRequest.txt");
 
-	ApplicationLayer A(Request);
-	vector<string> headers = A.getHeaders();
-	//for (const auto& key : headers) {
-	//	std::cout << key << " ";
-	//	cout << endl;
-	//}
-	TransportLayer T(Request);
-	NetworkLayer N(Request);
-	DataLinkLayer D(Request);
+	queue<HTTPRequest> requestQueue;
+	requestQueue.push(request);
+	requestQueue.push(request2);
+	while(!requestQueue.empty()){		
+		HTTPRequest req = requestQueue.front();
+		TransportLayer T(req);
+		NetworkLayer N(T);
+		DataLinkLayer D(N);
 
-	for (const auto& pair : Request.getBuffer()) {
-		std::cout  << pair.first << ":" << pair.second << std::endl; 
+		for (const auto& pair : D.getMessage()) {
+			std::cout << pair.first << ":" << pair.second << std::endl;
+		}
+
+
+		cout << endl;
+		PhysicalLayer P(D);
+		cout << endl;
+		requestQueue.pop();
+
+
 	}
-
-	cout << endl;
-	
-	PhysicalLayer P(Request);
-	
-	
-	
-
-	
    
 }
 

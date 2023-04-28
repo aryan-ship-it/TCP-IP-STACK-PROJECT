@@ -7,7 +7,7 @@
 
 using namespace std;
 
-DataLinkLayer::DataLinkLayer(HTTPRequest &Request) {
+DataLinkLayer::DataLinkLayer(NetworkLayer &Request) {
 	string source;
 	string dest;
 	while (source == dest) {
@@ -17,10 +17,11 @@ DataLinkLayer::DataLinkLayer(HTTPRequest &Request) {
 	setSourceMac(source);
 	setDestMac(dest);
 
-	map<string, string> message = Request.getBuffer();
-	message["SourceMAC"] = source;
-	message["DestMAC"] = dest;
-	Request.setBuffer(message);
+	setMessage(Request.getMessage());
+	
+	Message["SourceMAC"] = source;
+	Message["DestMAC"] = dest;
+
 
 
 	
@@ -28,6 +29,10 @@ DataLinkLayer::DataLinkLayer(HTTPRequest &Request) {
 
 	
 }
+
+void DataLinkLayer::setMessage(map<string, string> message) { Message = message;}
+map<string, string> DataLinkLayer::getMessage() {return Message;}
+
 
 string DataLinkLayer::getDestMac() { return destMAC; }
 string DataLinkLayer::getSourceMac() { return sourceMAC; }

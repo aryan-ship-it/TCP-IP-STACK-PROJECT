@@ -5,8 +5,5 @@ Accept: text/html,application/xhtml+xml\r\n
 Accept-Language: en-us,en;q=0.5\r\n
 Accept-Encoding: gzip,deflate\r\n
 Connection: keep-alive\r\n
-content-type: multimedia/form-data
-Conetent-Length: 345
-
--12656974
-\r\n
+Content-type: multimedia/form-data
+Content-Length: 345

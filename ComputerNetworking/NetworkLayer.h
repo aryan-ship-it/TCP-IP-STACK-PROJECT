@@ -1,18 +1,22 @@
 #pragma once
 #include "IPAddress.h"
-#include "HTTPRequest.h"
+#include "TransportLayer.h"
 #include <string>
 
 
 class NetworkLayer
 {
-private: 
+private:
+	map <string, string> Message;
 	string SourceIP;
 	string DestIP; 
 public: 
-	NetworkLayer(HTTPRequest &Request);
+	NetworkLayer(TransportLayer &Request);
 	void setSourceIP(string sourceIP);
 	void setDestIP(string destIP);
+	
+	void setMessage(map<string,string>);
+	map<string, string> getMessage();
 	
 
 	string getSourceIP();

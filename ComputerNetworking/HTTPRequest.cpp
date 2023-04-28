@@ -5,15 +5,24 @@ using namespace std;
 #include <fstream> 
 #include <vector>
 #include <map>
-#include "ApplicationLayer.h"
 
 
-HTTPRequest::HTTPRequest() {
-    Buffer = parseBuffer();
+
+HTTPRequest::HTTPRequest(string Method,string fileName) {
+
+    if (Method == "GET") { setMethod("GET"); Message["Method"] = "GET"; }
+    else { setMethod("POST"); Message["Method"] = "POST";}
+
+    Message = parseMessage(fileName);
 }
 
-std::map<std::string, std::string> HTTPRequest::parseBuffer() {
-    std::ifstream getFile("getRequest.txt");
+void HTTPRequest::setMethod(string method) { Method = method; }
+string HTTPRequest::getMethod(){ return Method;}
+
+
+
+std::map<std::string, std::string> HTTPRequest::parseMessage(string file) {
+    std::ifstream getFile(file);
     if (!getFile.is_open()) {
         std::cout << "Unable to open file." << std::endl;
         return std::map<std::string, std::string>(); // Return an empty map
@@ -48,5 +57,20 @@ std::map<std::string, std::string> HTTPRequest::parseBuffer() {
     return request;
 }
 
-void HTTPRequest::setBuffer(map <string, string> buffer) { Buffer = buffer; }
-map <string, string> HTTPRequest::getBuffer() { return Buffer; }
+void HTTPRequest::setHeaders(map<string, string> map) {
+    if (map.empty()) {
+        return;
+    }
+    else {
+        for (const auto& key : map) {
+            Headers.push_back(key.first);
+        }
+    }
+
+}
+
+vector <string> HTTPRequest::getHeaders() {return Headers;}
+
+
+void HTTPRequest::setMessage(map <string, string> buffer) { Message = buffer; }
+map <string, string> HTTPRequest::getMessage() { return Message; }

@@ -7,25 +7,17 @@
 #include <vector>
 
 using namespace std;
-//Layer3::Layer3() {
-//    sourcePort = setsourcePort();
-//    destinationPort = setdestinationPort();;
-// }
+
 
 TransportLayer::TransportLayer(HTTPRequest &Request) {
     sourcePortGenerator(); 
     destPortGenerator(); 
 
+    setMessage(Request.getMessage());
+ 
 
-    string source = to_string(getSourcePort()); 
-    string dest = to_string(getDestinationPort());
-    
-
-    map<string, string> TPBuffer = Request.getBuffer();
-    TPBuffer["SourcePort"] = source;
-    TPBuffer["DestPort"] = dest; 
-
-    Request.setBuffer(TPBuffer);
+    Message["SourcePort"] = to_string(getSourcePort());
+    Message["DestPort"] = to_string(getDestinationPort());
 
     
     
@@ -34,14 +26,13 @@ TransportLayer::TransportLayer(HTTPRequest &Request) {
 }
 
 void TransportLayer::setSourcePort(uint16_t sourcePort) { SourcePort = sourcePort; }
-
-
-
 void TransportLayer::setDestinationPort(uint16_t destPort) { DestinationPort = destPort; }
 
 uint16_t TransportLayer::getSourcePort() { return SourcePort; }
-
 void TransportLayer::sourcePortGenerator() { SourcePort = generatePort();}
+
+void TransportLayer::setMessage(map<string, string> message) {Message = message;}
+map<string, string> TransportLayer::getMessage() { return Message; }
 
 void TransportLayer::destPortGenerator() {
     do {

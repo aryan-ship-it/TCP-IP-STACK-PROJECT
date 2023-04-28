@@ -1,22 +1,32 @@
 #include "PhysicalLayer.h"
 
 
-PhysicalLayer:: PhysicalLayer(HTTPRequest &Request){
-	map<string, string> requestMap = Request.getBuffer();
+PhysicalLayer:: PhysicalLayer(DataLinkLayer &Request){
+	map<string, string> requestMap = Request.getMessage();
+
 	string message = mapTostring(requestMap);
 	string binaryOutput = stringToBinary(message);
+
+
+	setResponse(binaryOutput);
+	serializeFile("Request.txt");
 
 	cout << message << endl;
 	cout << endl;
 	cout << binaryOutput;
-	
-
-	
-
-
-
 
 }
+
+
+void PhysicalLayer::serializeFile(string fileName){
+	Serializer S(fileName,Response);
+}
+
+void PhysicalLayer::setResponse(string response) { Response = response;}
+string PhysicalLayer::getResponse() { return Response;}
+
+void PhysicalLayer::setMessage(map<string, string> message) { Message = message; }
+map<string, string> PhysicalLayer::getMessage() {return Message;}
 
 
 string PhysicalLayer::stringToBinary(const string& input) {
