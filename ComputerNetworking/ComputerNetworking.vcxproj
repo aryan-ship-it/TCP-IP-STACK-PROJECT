@@ -148,6 +148,8 @@
   <ItemGroup>
     <Text Include="getRequest.txt" />
     <Text Include="postRequest.txt" />
+    <Text Include="Request.txt" />
+    <Text Include="RequestObject.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

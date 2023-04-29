@@ -9,6 +9,7 @@
 #include "DataLinkLayer.h"
 #include "PhysicalLayer.h"
 #include "HTTPRequest.h"
+#include "Serializer.h"
 #include <vector>
 #include <queue>
 
@@ -30,17 +31,24 @@ int main()
 	requestQueue.push(request2);
 	while(!requestQueue.empty()){		
 		HTTPRequest req = requestQueue.front();
-		TransportLayer T(req);
-		NetworkLayer N(T);
-		DataLinkLayer D(N);
+		TransportLayer tcpObj(req);
+		NetworkLayer netObj(tcpObj);
+		DataLinkLayer dataObj(netObj);
 
-		for (const auto& pair : D.getMessage()) {
+		for (const auto& pair : dataObj.getMessage()) {
 			std::cout << pair.first << ":" << pair.second << std::endl;
 		}
 
 
 		cout << endl;
-		PhysicalLayer P(D);
+
+		PhysicalLayer binaryOutput(dataObj);
+		Serializer serialize("RequestObject.txt", binaryOutput.getMapString());
+
+		cout << endl;
+		cout << binaryOutput.getMapString();
+
+		cout << endl;
 		cout << endl;
 		requestQueue.pop();
 

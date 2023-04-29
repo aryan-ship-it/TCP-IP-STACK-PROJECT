@@ -4,14 +4,12 @@
 PhysicalLayer:: PhysicalLayer(DataLinkLayer &Request){
 	map<string, string> requestMap = Request.getMessage();
 
-	string message = mapTostring(requestMap);
-	string binaryOutput = stringToBinary(message);
+	setMapstring(mapTostring(requestMap));
+	string binaryOutput = stringToBinary(MapString);
 
 
 	setResponse(binaryOutput);
 	serializeFile("Request.txt");
-
-	cout << message << endl;
 	cout << endl;
 	cout << binaryOutput;
 
@@ -20,6 +18,7 @@ PhysicalLayer:: PhysicalLayer(DataLinkLayer &Request){
 
 void PhysicalLayer::serializeFile(string fileName){
 	Serializer S(fileName,Response);
+	
 }
 
 void PhysicalLayer::setResponse(string response) { Response = response;}
@@ -62,5 +61,5 @@ string PhysicalLayer::mapTostring(map<string,string> &myMap) {
 
 }
 
-void PhysicalLayer::setMapstring(string myMap) { MapString = myMap; }
+void PhysicalLayer::setMapstring(string mapString) { MapString = mapString; }
 string PhysicalLayer::getMapString() { return MapString; }

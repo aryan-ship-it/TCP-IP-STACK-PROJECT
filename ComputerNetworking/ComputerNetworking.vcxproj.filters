@@ -32,6 +32,9 @@
     <ClCompile Include="IPAddress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Serializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PhysicalLayer.h">
@@ -52,9 +55,14 @@
     <ClInclude Include="IPAddress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Serializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="getRequest.txt" />
     <Text Include="postRequest.txt" />
+    <Text Include="Request.txt" />
+    <Text Include="RequestObject.txt" />
   </ItemGroup>
 </Project>
