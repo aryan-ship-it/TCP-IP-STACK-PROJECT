@@ -18,7 +18,9 @@ Data link layer: This layer uses a MAC to generate the frames that will be trans
 Physical layer: This layer sends and receives signals on the physical wire or antenna to transmits the bits found in frames.
 
 
-**Collaborators**
+**Contributors**
+
+aryan-ship-it
 
 Willie1416
 
