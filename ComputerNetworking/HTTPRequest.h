@@ -6,8 +6,8 @@
 /*
 * The http request Layer is the first layer that processes the message.
 * Message is a map data type that creates key value pairs from the text file 
-* parseMessage() function parses the message from the text message from the text file and generates a map 
-* The parseMessage() function then calls the setter for Message and sets the key value pair
+* parseMessage() method parses the message from the text message from the text file and generates a map 
+* The parseMessage() method then calls the setter for Message and sets the key value pair
 * Headers is a private data members that stores all the headers retrieved from the request
 * Method clarifies whether the incoming request is a POST request or a GET request
 * The constructor of this class  parses the message and sets the key value pair

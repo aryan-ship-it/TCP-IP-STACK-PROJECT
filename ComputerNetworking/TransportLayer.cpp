@@ -7,17 +7,25 @@
 #include <vector>
 
 using namespace std;
+/*
+* The transport layer has a composition relationship with the HTTPRequest class
+* It serves the Application layer by taking in the object and encapsulating data
+* The transport layer creates a source port and destination port
+* Newly encapsulated message is stored with the Message data member
+* the size of each port number is limited to 2 bytes
+* The constructor gives random port values for individual data members.
+*/
 
-
+//constructor
 TransportLayer::TransportLayer(HTTPRequest &Request) {
-    sourcePortGenerator(); 
-    destPortGenerator(); 
+    sourcePortGenerator(); //generate source port 
+    destPortGenerator(); //generate destport
 
-    setMessage(Request.getMessage());
+    setMessage(Request.getMessage()); //getMessage from the HTTP Layer
  
 
-    Message["SourcePort"] = to_string(getSourcePort());
-    Message["DestPort"] = to_string(getDestinationPort());
+    Message["SourcePort"] = to_string(getSourcePort()); //add source port to the map
+    Message["DestPort"] = to_string(getDestinationPort()); //add dest port to the map
 
     
     
@@ -25,6 +33,7 @@ TransportLayer::TransportLayer(HTTPRequest &Request) {
 
 }
 
+//setters and getters
 void TransportLayer::setSourcePort(uint16_t sourcePort) { SourcePort = sourcePort; }
 void TransportLayer::setDestinationPort(uint16_t destPort) { DestinationPort = destPort; }
 

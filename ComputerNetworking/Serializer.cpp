@@ -3,6 +3,14 @@
 #include <fstream>
 #include <string>
 
+/*
+Helper class that serializes the message into a given file
+* takes in parameters such as message and file name
+* if the file does not exist creates a new file in the same path and writes the message to the file
+*/
+
+
+//take a filename and a message then adds the given message to the file
 Serializer::Serializer(string fileName,string message) {
     setfileName(fileName);
     setMessage(message);

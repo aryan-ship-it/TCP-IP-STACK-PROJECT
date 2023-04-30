@@ -9,8 +9,8 @@ using namespace std;
 /*
 * The http request Layer is the first layer that processes the message.
 * Message is a map data type that creates key value pairs from the text file
-* parseMessage() function parses the message from the text message from the text file and generates a map
-* The parseMessage() function then calls the setter for Message and sets the key value pair
+* parseMessage() method parses the message from the text message from the text file and generates a map
+* The parseMessage() method then calls the setter for Message and sets the key value pair
 * Headers is a private data members that stores all the headers retrieved from the request
 * Method clarifies whether the incoming request is a POST request or a GET request
 * The constructor of this class  parses the message and sets the key value pair
@@ -18,10 +18,10 @@ using namespace std;
 
 
 HTTPRequest::HTTPRequest(string Method,string fileName) {
-
+    //set method
     if (Method == "GET") { setMethod("GET"); Message["Method"] = "GET"; }
     else { setMethod("POST"); Message["Method"] = "POST";}
-
+    //get the message from the parsemessage function
     Message = parseMessage(fileName);
 }
 
@@ -29,6 +29,7 @@ void HTTPRequest::setMethod(string method) { Method = method; }
 string HTTPRequest::getMethod(){ return Method;}
 
 
+//parse message 
 
 std::map<std::string, std::string> HTTPRequest::parseMessage(string file) {
     std::ifstream getFile(file);
@@ -65,7 +66,7 @@ std::map<std::string, std::string> HTTPRequest::parseMessage(string file) {
 
     return request;
 }
-
+//set of all the headers and options
 void HTTPRequest::setHeaders(map<string, string> map) {
     if (map.empty()) {
         return;

@@ -3,7 +3,12 @@
 #include <fstream>
 #include <iostream>
 
-
+/*
+Helper class that serializes the message into a given file
+* takes in parameters such as message and file name
+* if the file does not exist creates a new file in the same path and writes the message to the file
+* setters and getters allow you to customize message as well as filename
+*/
 using namespace std;
 
 class Serializer

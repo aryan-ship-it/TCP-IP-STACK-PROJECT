@@ -4,6 +4,14 @@
 
 using namespace std;
 
+/*
+* The IPAddress class is a helper class that generates custom as well as random sourceIP and destination IP addresses
+* Source IP and the destination IP are set by the constructor
+* The randomIPAddress() method generates a random IP address each time it is called
+* setters and getters allow you to add custom IP addresses as well
+*/
+
+//constructor
 IPAddress::IPAddress() {
 	while (sourceIP == destIP) {
 		sourceIP = randomIPAddress();
@@ -13,13 +21,14 @@ IPAddress::IPAddress() {
 
 }
 
+
 string IPAddress::getSourceIPAddress() {return sourceIP;}
 void IPAddress::setSourceIPAddress(string address) {sourceIP = address;}
 
 string IPAddress::getDestIPAddress() {return destIP;}
 void IPAddress::setDestIPAddress(string address) { destIP = address;}
 
-
+//random IP generator
 string IPAddress::randomIPAddress() {
 
 	string address = "";

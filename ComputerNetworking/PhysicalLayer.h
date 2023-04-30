@@ -3,7 +3,16 @@
 #include "Serializer.h"
 #include <iostream>
 #include <bitset>
-
+/*
+* Physical Layer is the final layer that is responsible for converting the encapsulated message into a binary file
+* it has a direct composition relation with the data link layer 
+* the methods string to binary converts the encapsulated string message to binary
+* the method binary to string converts a binary message to string 
+* map to string generates a string representation of the map 
+* the constructor takes in a datalink layer object
+* setters and getters allow you to generate customized maps
+* For serializiation this class has a dependency relation with the serializer class
+*/
 using namespace std; 
 
 class PhysicalLayer
