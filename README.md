@@ -101,6 +101,7 @@ The private member does the following:
 The constructor of the PhysicalLayer class takes a DataLinkLayer object as a reference and initializes the MapString and Response private members. It calls the mapToString and stringToBinary functions to serialize the Request message and set the Response string. It then calls the serializeFile function to write the serialized message to a file.
 
 Helper Class:
+
 IPAddress Class: This class is a helper class for the NetworkLayer class and consist of 2 private data member and 1 member function. 
 
 The private member does the following:
