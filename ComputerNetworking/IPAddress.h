@@ -1,5 +1,11 @@
 #pragma once
 #include <string>
+/*
+* The IPAddress class is a helper class that generates custom as well as random sourceIP and destination IP addresses
+* Source 
+* 
+* 
+*/
 
 
 using namespace std;
@@ -10,7 +16,9 @@ private:
 	string destIP;
 	string randomIPAddress();
 public:
+
 	IPAddress();
+	//setters and getters
 	string getSourceIPAddress();
 	void setSourceIPAddress(string);
 
