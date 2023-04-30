@@ -2,7 +2,24 @@ This README provides an overview of Object oriented TCP/IP message stack encapsu
 
 **Purpose**
 
+In the Program, we have simulated the Networking TCP/IP Stack.
 Encapsulating TCP/IP message stacks is a technique for ensuring dependable networked device communication. It divides data into tiny packets that may be sent over the network and put back together at the other end. Each packet gains headers during the encapsulation process, which contain data required for delivery and routing. This project uses the SOLID Object Oriented Design Principle which consists of Single-Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
+
+**Use Case**
+
+In the real world the use case of the program we have build is used for:
+
+ - `Web Browsing`: The HTTP protocol is most commonly used in web browsing. When you type a URL into a web browser, the browser sends an HTTP request to the server to retrieve the web page and its associated resources (such as images, videos, and scripts). The server then responds with an HTTP response containing the requested content.
+
+-  `API Interactions`: Many web applications and mobile apps use APIs to communicate with servers. APIs often use the HTTP protocol for these interactions, with HTTP requests being used to send data to the server and HTTP responses being used to retrieve data from the server.
+  
+-  `File Transfer`: HTTP can also be used for file transfer. For example, the HTTP protocol can be used to upload and download files to and from a web server.
+
+-  `Email`: The TCP/IP stack is used for email communication. When you send an email, the email client uses the Simple Mail Transfer Protocol (SMTP) to send the email to the email server. The email server then uses the Internet Message Access Protocol (IMAP) or Post Office Protocol (POP) to retrieve the email and send it to the recipient's email client.
+
+-  `VoIP`: The TCP/IP stack is also used for Voice over IP (VoIP) communication. VoIP applications such as Skype, Zoom, and FaceTime use the Real-time Transport Protocol (RTP) to transmit audio and video data over the internet.
+
+-  `Remote Access`: The TCP/IP stack is also used for remote access to networks and computers. Remote access protocols such as Remote Desktop Protocol (RDP) and Virtual Network Computing (VNC) use the TCP/IP stack to transmit data between the remote device and the host computer.
 
 **Components**
 
@@ -101,7 +118,6 @@ The private member does the following:
 The constructor of the PhysicalLayer class takes a DataLinkLayer object as a reference and initializes the MapString and Response private members. It calls the mapToString and stringToBinary functions to serialize the Request message and set the Response string. It then calls the serializeFile function to write the serialized message to a file.
 
 Helper Class:
-
 IPAddress Class: This class is a helper class for the NetworkLayer class and consist of 2 private data member and 1 member function. 
 
 The private member does the following:
@@ -119,6 +135,12 @@ The private member does the following:
 -   `serializeFile` is a private function that takes a file name and a message and writes the message to the file. If the file already exists, it appends the message to the end of the file. If the file does not exist, it creates the file and writes the message to it.
 
 The constructor of the Serializer class takes a file name and a message as parameters. It sets the private member variables `fileName` and `Message` using the `setfileName` and `setMessage` functions respectively. It then calls the private `serializeFile` function to serialize the message.
+
+**How to run the Program**
+
+- clone the program into your IDE which supports the C++ programming language
+- open the `ComputerNetwoking.cpp` program and compile the program
+- After running check the `Request.txt` file and the `RequestObject.txt` file which should append the binary and the string message into the respective files.
 
 **Contributors**
 
