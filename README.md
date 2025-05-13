@@ -1,5 +1,10 @@
 This README provides an overview of Object oriented TCP/IP message stack encapsulation, including its Object-oriented design principle, purpose, components, and how it works
 
+**UML Diagram Implementation**
+
+![image](https://github.com/user-attachments/assets/fc8ac9b8-fbf4-41c7-966e-10fdee46caf9)
+
+
 **Purpose**
 
 In the Program, we have simulated the Networking TCP/IP Stack.
